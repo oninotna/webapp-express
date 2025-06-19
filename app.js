@@ -1,7 +1,14 @@
 // Express config
 express = require('express');
 app = express();
+const cors = require('cors');
 const port = process.env.PORT_NUMBER;
+const client = process.env.CLIENT_URL
+
+// Cors
+app.use(cors({
+    origin: client
+}));
 
 // Routers import
 const movieRouter = require('./routers/movieRouter');

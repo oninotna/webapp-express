@@ -1,12 +1,15 @@
 // Epress e Router config
 express = require('express');
 const router = express.Router();
-const {index, show} = require('../controllers/movieController');
+const {index, show, storeReview} = require('../controllers/movieController');
 
-// Index
+// Index movie
 router.get('/', index)
 
-// Show
+// Show movie
 router.get('/:id', show);
+
+// Create review
+router.post('/:id/reviews', storeReview)
 
 module.exports = router;
